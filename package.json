@@ -16,5 +16,8 @@
     "express": "^4.16.4",
     "knex": "^0.15.2",
     "pg": "^7.6.0"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0"
   }
 }

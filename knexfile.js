@@ -1,4 +1,10 @@
 // Update with your config settings.
+//npx knex init
+
+require('dotenv').config();
+const path = require('path');
+
+
 
 module.exports = {
 
@@ -6,7 +12,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: process.env.POSTGRES_DB,
-      user:     process.env.POSTGRES_USER,
+      user: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD
     },
     pool: {
@@ -14,7 +20,11 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'knex_migrations',
+      directory: path.join(__dirname, 'db', 'migrations')
+    },
+    seeds: {
+      directory: path.join(__dirname, 'db', 'seeds', 'dev')
     },
     debug: true
 
@@ -24,7 +34,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -40,7 +50,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {
